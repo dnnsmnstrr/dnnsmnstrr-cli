@@ -16,7 +16,8 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava",
+		"start": "node source/cli.js"
 	},
 	"files": [
 		"source"
@@ -24,7 +25,7 @@
 	"keywords": [
 		"cli-app",
 		"cli",
-    "dnnsmnstrr",
+		"dnnsmnstrr",
 		"sindresorhus",
 		"unicorns"
 	],
