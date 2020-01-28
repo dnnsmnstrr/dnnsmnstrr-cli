@@ -1,16 +1,16 @@
 {
-	"name": "sindresorhus",
-	"version": "2.1.0",
-	"description": "The Sindre Sorhus CLI",
+	"name": "dnnsmnstrr",
+	"version": "1.0",
+	"description": "The Dennis Muensterer CLI",
 	"license": "MIT",
-	"repository": "sindresorhus/sindresorhus",
+	"repository": "dnnsmnstrr/dnnsmnstrr",
 	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"name": "Dennis Muensterer",
+		"email": "dennismuensterer@gmail.com",
+		"url": "muensterer.tech"
 	},
 	"bin": {
-		"sindresorhus": "source/cli.js"
+		"dnnsmnstrr": "source/cli.js"
 	},
 	"engines": {
 		"node": ">=8"
@@ -24,6 +24,7 @@
 	"keywords": [
 		"cli-app",
 		"cli",
+    "dnnsmnstrr",
 		"sindresorhus",
 		"unicorns"
 	],
