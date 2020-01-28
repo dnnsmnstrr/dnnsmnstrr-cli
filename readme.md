@@ -1,6 +1,6 @@
 # dnnsmnstrr [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)
 
-> The [Dennis Muenster](https://muensterer.tech) CLI
+> The [Dennis Muensterer](https://muensterer.tech) CLI
 
 
 
