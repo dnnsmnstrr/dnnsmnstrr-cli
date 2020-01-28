@@ -1,8 +1,7 @@
-# sindresorhus [![Build Status](https://travis-ci.org/sindresorhus/sindresorhus.svg?branch=master)](https://travis-ci.org/sindresorhus/sindresorhus)
+# dnnsmnstrr [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)
 
-> The [Sindre Sorhus](https://sindresorhus.com) CLI
+> The [Dennis Muenster](https://muensterer.tech) CLI
 
-<img src="screenshot.png" width="752">
 
 
 ## Usage
@@ -10,7 +9,7 @@
 Install Node.js, then:
 
 ```
-$ npx sindresorhus
+$ npx dnnsmnstrr
 ```
 
 
