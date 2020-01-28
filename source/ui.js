@@ -27,31 +27,23 @@ const createItems = items => {
 const items = createItems([
 	{
 		label: 'Website',
-		url: 'https://sindresorhus.com'
+		url: 'https://muensterer.tech'
 	},
 	{
 		label: 'Twitter',
-		url: 'https://twitter.com/sindresorhus'
+		url: 'https://twitter.com/dnnsmnstrr'
 	},
 	{
 		label: 'GitHub',
-		url: 'https://github.com/sindresorhus'
+		url: 'https://github.com/dnnsmnstrr'
 	},
 	{
 		label: 'Blog',
-		url: 'https://blog.sindresorhus.com'
-	},
-	{
-		label: 'Ask Me Anything',
-		url: 'https://github.com/sindresorhus/ama'
+		url: 'https://muensterer.tech/blog'
 	},
 	{
 		label: 'Contact',
-		url: 'https://sindresorhus.com/contact'
-	},
-	{
-		label: 'Support my open source work',
-		url: 'https://www.patreon.com/sindresorhus'
+		url: 'https://muensterer.tech/contact'
 	},
 	{
 		label: 'Unicorns!',
@@ -76,7 +68,7 @@ const items = createItems([
 module.exports = () => (
 	<Box flexDirection="column">
 		<Box marginBottom={1}>
-			<Text>I’m a full-time open-sourcerer making things like macOS apps, CLI tools, and modules.</Text>
+			<Text>I like making things.</Text>
 		</Box>
 		<SelectInput items={items} onSelect={handleSelect}/>
 	</Box>
