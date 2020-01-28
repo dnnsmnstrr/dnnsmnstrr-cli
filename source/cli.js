@@ -12,7 +12,7 @@ const ui = importJsx('./ui');
 
 meow(`
 	Usage
-	  $ sindresorhus
+	  $ dnnsmnstrr
 `);
 
 const fallback = async () => {
