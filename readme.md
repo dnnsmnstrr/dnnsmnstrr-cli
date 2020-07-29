@@ -1,4 +1,4 @@
-# [Dennis Muensterer](https://muensterer.tech)
+# [Dennis Muensterer](https://muensterer.xyz)
 
 Hi, i'm Dennis!
 
@@ -7,7 +7,7 @@ Hi, i'm Dennis!
 const dennis = {
   age: 23,
   code: [JavaScript, 'Java', 'Swift', 'AppleScript', 'C', 'Python'],
-  ide: [Atom, 'Xcode', 'VScode', 'Eclipse']
+  ide: [Atom, 'Xcode', 'VScode', 'Eclipse'],
   frameworks: ['React', 'React Native', 'material-ui'],
   tools: ['Storybook', 'Jest']
 }
