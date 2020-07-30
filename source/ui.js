@@ -2,6 +2,7 @@
 const React = require('react');
 const {Box, Text, useInput, useApp, useStdout, render} = require('ink');
 const SelectInput = require('ink-select-input').default;
+const TextInput = require('ink-text-input').default;
 const open = require('open');
 const simpleGit = require('simple-git');
 
@@ -77,7 +78,10 @@ const Ui = () => {
 	const log = message => DEBUG ? write(message) : null;
 
 	const {exit} = useApp();
+	const {isFocused} = useFocus();
+
 	const [index, setIndex] = React.useState(0);
+	const [command, setCommand] = React.useState('');
 	useInput(input => {
 		if (input === 'q') {
 			exit();
@@ -90,14 +94,29 @@ const Ui = () => {
 				setIndex(itemIndex);
 			}
 		}
-	});
+	}, {isActive: !isFocused});
 	const updateIndex = (item, nextIndex) => setIndex(nextIndex);
+
 	return (
 		<Box flexDirection="column" padding={1}>
 			<Box borderStyle="round" marginBottom={1}>
 				<Text>Hi, I&apos;m Dennis Muensterer. I like making things.</Text>
 			</Box>
-			<SelectInput items={items} index={index} onSelect={handleSelect} onHighlight={updateIndex}/>
+			<SelectInput
+				items={items}
+				index={index}
+				onSelect={handleSelect}
+				onHighlight={updateIndex}
+			/>
+			{isFocused &&
+			<Box>
+				<Box marginRight={1}>
+					<Text>Enter your command:</Text>
+				</Box>
+
+				<TextInput value={command} onChange={setCommand}/>
+			</Box>
+			}
 		</Box>
 	);
 };
