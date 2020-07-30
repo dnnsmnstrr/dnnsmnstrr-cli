@@ -1,13 +1,13 @@
 {
   "name": "dnnsmnstrr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Dennis Muensterer CLI",
   "license": "MIT",
   "repository": "dnnsmnstrr/dnnsmnstrr",
   "author": {
     "name": "Dennis Muensterer",
     "email": "dennismuensterer@gmail.com",
-    "url": "muensterer.xyz"
+    "url": "https://muensterer.xyz"
   },
   "bin": {
     "dnnsmnstrr": "source/cli.js"

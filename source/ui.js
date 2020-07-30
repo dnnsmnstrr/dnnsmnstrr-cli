@@ -6,9 +6,14 @@ const open = require('open');
 const simpleGit = require('simple-git');
 
 const git = simpleGit();
-const CURRENT_DOMAIN = 'https://muensterer.xyz/';
-const EMAIL = 'dennismuensterer@gmail.com';
+
+const {author} = require('../package.json');
+
+const CURRENT_DOMAIN = author.url;
+const EMAIL = author.email;
+
 const DEBUG = false;
+
 const handleSelect = item => {
 	if (item.url) {
 		open(item.url);
