@@ -72,7 +72,7 @@ const items = createItems([
 	}
 ]);
 
-const UI = () => {
+const Ui = () => {
 	const {write} = useStdout();
 	const log = message => DEBUG ? write(message) : null;
 
@@ -95,11 +95,11 @@ const UI = () => {
 	return (
 		<Box flexDirection="column" padding={1}>
 			<Box borderStyle="round" marginBottom={1}>
-				<Text>Hi, I'm Dennis Muensterer. I like making things.</Text>
+				<Text>Hi, I&apos;m Dennis Muensterer. I like making things.</Text>
 			</Box>
 			<SelectInput items={items} index={index} onSelect={handleSelect} onHighlight={updateIndex}/>
 		</Box>
 	);
 };
 
-render(<UI/>);
+render(<Ui/>);
