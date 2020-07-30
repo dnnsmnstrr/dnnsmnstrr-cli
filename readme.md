@@ -14,7 +14,7 @@ const dennis = {
 ```
 
 
-## CLI [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)
+## CLI [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)[![Run on Repl.it](https://repl.it/badge/github/dnnsmnstrr/dnnsmnstrr)](https://repl.it/github/dnnsmnstrr/dnnsmnstrr)
 
 My info is also available as a cli tool. Just install Node.js, then:
 
