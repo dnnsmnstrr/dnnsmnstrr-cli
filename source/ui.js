@@ -1,6 +1,6 @@
 'use strict';
 const React = require('react');
-const {Box, Text, useInput, useApp, useStdout} = require('ink');
+const {Box, Text, useInput, useApp, useStdout, render} = require('ink');
 const SelectInput = require('ink-select-input').default;
 const open = require('open');
 const simpleGit = require('simple-git');
