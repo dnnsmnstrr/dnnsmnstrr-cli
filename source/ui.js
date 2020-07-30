@@ -1,13 +1,15 @@
 'use strict';
 // Const path = require('path');
 const React = require('react');
-const {Box, Text} = require('ink');
+const {Box, Text, useInput, useApp, useStdout} = require('ink');
 const SelectInput = require('ink-select-input').default;
 const open = require('open');
-// Const terminalImage = require('terminal-image')
-// const git = require('simple-git');
+const git = require('simple-git');
 
-const handleSelect = item => {
+const CURRENT_DOMAIN = 'https://muensterer.xyz/';
+const EMAIL = 'dennismuensterer@gmail.com';
+
+const handleSelect = (item, index) => {
 	if (item.url) {
 		open(item.url);
 	}
@@ -27,41 +29,38 @@ const createItems = items => {
 
 const items = createItems([
 	{
+		id: 'website',
 		label: 'Website',
-		url: 'https://muensterer.tech'
+		url: CURRENT_DOMAIN
 	},
 	{
+		id: 'twitter',
 		label: 'Twitter',
 		url: 'https://twitter.com/dnnsmnstrr'
 	},
 	{
+		id: 'github',
 		label: 'GitHub',
 		url: 'https://github.com/dnnsmnstrr'
 	},
 	{
+		id: 'dotfiles',
 		label: 'Dotfiles',
-		url: 'https://github.com/dnnsmnstrr/dotfiles'
-		// Action () {
-		//   git.clone('https://github.com/dnnsmnstrr/dotfiles.git')
-		// }
+		url: 'https://github.com/dnnsmnstrr/dotfiles',
+		action() {
+			git.clone('https://github.com/dnnsmnstrr/dotfiles.git');
+		}
 	},
 	{
+		id: 'blog',
 		label: 'Blog',
-		url: 'https://muensterer.tech/blog'
+		url: CURRENT_DOMAIN + 'blog'
 	},
 	{
+		id: 'contact',
 		label: 'Contact',
-		url: 'https://muensterer.tech/contact'
+		url: 'mailto:' + EMAIL
 	},
-	// {
-	// 	label: 'Unicorns!',
-	// 	async action() {
-	// 		console.log(await terminalImage.file(path.join(__dirname, 'unicorn1.gif')));
-	// 		console.log(await terminalImage.file(path.join(__dirname, 'unicorn2.gif')));
-	// 		console.log(await terminalImage.file(path.join(__dirname, 'unicorn3.gif')));
-	// 	}
-	// },
-	// TODO: Add separator item here when https://github.com/vadimdemedes/ink-select-input/issues/4 is done
 	{
 		label: '---------'
 	},
@@ -73,11 +72,28 @@ const items = createItems([
 	}
 ]);
 
-module.exports = () => (
-	<Box flexDirection="column">
-		<Box marginBottom={1}>
-			<Text>Dennis Muensterer. I like making things.</Text>
+module.exports = () => {
+	const {write} = useStdout();
+	const {exit} = useApp();
+	const [index, setIndex] = React.useState(0);
+	useInput((input, key) => {
+		if (input === 'q') {
+			exit();
+		} else {
+			const itemIndex = items.findIndex(({id, label}) => (id || label)[0] === input);
+      	write(itemIndex.toString());
+			if (itemIndex >= 0) {
+				setIndex(itemIndex);
+			}
+		}
+	});
+	const updateIndex = (item, nextIndex) => setIndex(nextIndex);
+	return (
+		<Box flexDirection="column" padding={1}>
+			<Box borderStyle="round" marginBottom={1}>
+				<Text>Hi, I'm Dennis Muensterer. I like making things.</Text>
+			</Box>
+			<SelectInput items={items} index={index} onSelect={handleSelect} onHighlight={updateIndex}/>
 		</Box>
-		<SelectInput items={items} onSelect={handleSelect}/>
-	</Box>
-);
+	);
+};
