@@ -1,15 +1,15 @@
 'use strict';
-// Const path = require('path');
 const React = require('react');
 const {Box, Text, useInput, useApp, useStdout} = require('ink');
 const SelectInput = require('ink-select-input').default;
 const open = require('open');
-const git = require('simple-git');
+const simpleGit = require('simple-git');
 
+const git = simpleGit();
 const CURRENT_DOMAIN = 'https://muensterer.xyz/';
 const EMAIL = 'dennismuensterer@gmail.com';
-
-const handleSelect = (item, index) => {
+const DEBUG = false;
+const handleSelect = item => {
 	if (item.url) {
 		open(item.url);
 	}
@@ -72,16 +72,20 @@ const items = createItems([
 	}
 ]);
 
-module.exports = () => {
+const UI = () => {
 	const {write} = useStdout();
+	const log = message => DEBUG ? write(message) : null;
+
 	const {exit} = useApp();
 	const [index, setIndex] = React.useState(0);
-	useInput((input, key) => {
+	useInput(input => {
 		if (input === 'q') {
 			exit();
 		} else {
-			const itemIndex = items.findIndex(({id, label}) => (id || label)[0] === input);
-      	write(itemIndex.toString());
+			const itemIndex = items.findIndex(
+				({id, label}) => (id || label)[0] === input
+			);
+			log(itemIndex.toString());
 			if (itemIndex >= 0) {
 				setIndex(itemIndex);
 			}
@@ -97,3 +101,5 @@ module.exports = () => {
 		</Box>
 	);
 };
+
+render(<UI/>);
