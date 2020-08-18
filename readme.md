@@ -12,7 +12,11 @@ const dennis = {
   tools: ['Storybook', 'Jest']
 }
 ```
-[![Top Langs](https://github-readme-stats-seven-self.vercel.app//api/top-langs/?username=dnnsmnstrr&layout=compact)](https://github.com/dnnsmnstrr/github-readme-stats)
+
+[![Dennis's github stats](https://github-readme-stats-seven-self.vercel.app//api?username=dnnsmnstrr)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dnnsmnstrr&layout=compact)](https://github.com/dnnsmnstrr/github-readme-stats)
+
 
 ## CLI [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)[![Run on Repl.it](https://repl.it/badge/github/dnnsmnstrr/dnnsmnstrr)](https://repl.it/github/dnnsmnstrr/dnnsmnstrr)
 
