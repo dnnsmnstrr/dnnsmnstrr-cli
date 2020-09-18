@@ -13,17 +13,22 @@ const dennis = {
 }
 ```
 
-[![Dennis's github stats](https://github-readme-stats-seven-self.vercel.app//api?username=dnnsmnstrr)](https://github.com/anuraghazra/github-readme-stats)
+<details open>
+	<summary>Stats</summary>
+		<img align="center" src="https://github-readme-stats-seven-self.vercel.app/api?username=dnnsmnstrr" />
+		<img align="center" height="195" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dnnsmnstrr&layout=compact" />
+</details>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dnnsmnstrr&layout=compact)](https://github.com/dnnsmnstrr/github-readme-stats)
+<details>
+<summary>CLI</summary>
+	<h2>CLI</h2> <img src="https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master" alt="Build Status" /> <img src="https://repl.it/badge/github/dnnsmnstrr/dnnsmnstrr" alt="Run on Repl.it" />
 
+	My info is also available as a cli tool. Just install Node.js, then:
 
-## CLI [![Build Status](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/dnnsmnstrr)[![Run on Repl.it](https://repl.it/badge/github/dnnsmnstrr/dnnsmnstrr)](https://repl.it/github/dnnsmnstrr/dnnsmnstrr)
+	```
+	$ npx dnnsmnstrr
+	```
 
-My info is also available as a cli tool. Just install Node.js, then:
+	Inspired by [Sindre Sorhus](https://sindresorhus.com)
 
-```
-$ npx dnnsmnstrr
-```
-
-Inspired by [Sindre Sorhus](https://sindresorhus.com)
+</details>
