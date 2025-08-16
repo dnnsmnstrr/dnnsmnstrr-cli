@@ -1,10 +1,15 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
+
+
+import meow from 'meow';
 
 meow(`
 	Usage
-	  $ dnnsmnstrr
-`);
+		$ dnnsmnstrr
+`, {
+	importMeta: import.meta
+});
 
-require('import-jsx')('./ui');
+(async () => {
+	await import('./ui.jsx');
+})();

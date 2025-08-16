@@ -1,34 +1,20 @@
-'use strict';
-const React = require('react');
-const {Box, Text, useInput, useApp, useStdout, render} = require('ink');
-const SelectInput = require('ink-select-input').default;
-const open = require('open');
-const simpleGit = require('simple-git');
 
-const git = simpleGit();
+import React, {useState} from 'react';
+import {Box, Text, useInput, useApp, useStdout, render} from 'ink';
+import SelectInput from 'ink-select-input';
+import open from 'open';
+import pkg from '../package.json';
 
-const {author} = require('../package.json');
-
+const {author} = pkg;
 const CURRENT_DOMAIN = author.url;
 const EMAIL = author.email;
+const DEBUG = true;
 
-const DEBUG = false;
-
-const handleSelect = item => {
-	if (item.url) {
-		open(item.url);
-	}
-
-	if (item.action) {
-		item.action();
-	}
-};
 
 const createItems = items => {
 	for (const item of items) {
 		item.key = item.url || item.label;
 	}
-
 	return items;
 };
 
@@ -40,26 +26,13 @@ const items = createItems([
 	},
 	{
 		id: 'twitter',
-		label: 'Twitter',
-		url: 'https://twitter.com/dnnsmnstrr'
+		label: 'X / Twitter',
+		url: 'https://x.com/dnnsmnstrr'
 	},
 	{
 		id: 'github',
 		label: 'GitHub',
 		url: 'https://github.com/dnnsmnstrr'
-	},
-	{
-		id: 'dotfiles',
-		label: 'Dotfiles',
-		url: 'https://github.com/dnnsmnstrr/dotfiles',
-		action() {
-			git.clone('https://github.com/dnnsmnstrr/dotfiles.git');
-		}
-	},
-	{
-		id: 'blog',
-		label: 'Blog',
-		url: CURRENT_DOMAIN + 'blog'
 	},
 	{
 		id: 'contact',
@@ -70,19 +43,26 @@ const items = createItems([
 		label: '---------'
 	},
 	{
-		label: 'Quit',
-		action() {
-			process.exit(); // eslint-disable-line unicorn/no-process-exit
-		}
+		id: 'quit',
+		label: 'Quit'
 	}
 ]);
 
 const Ui = () => {
 	const {write} = useStdout();
 	const log = message => DEBUG ? write(message) : null;
-
 	const {exit} = useApp();
-	const [index, setIndex] = React.useState(0);
+	const [index, setIndex] = useState(0);
+
+	const handleSelect = item => {
+		if (item.url) {
+			open(item.url);
+			return;
+		}
+		if (item.id === 'quit') {
+			exit();
+		}
+	};
 	useInput(input => {
 		if (input === 'q') {
 			exit();
@@ -96,13 +76,13 @@ const Ui = () => {
 			}
 		}
 	});
-	const updateIndex = (item, nextIndex) => setIndex(nextIndex);
+	const updateIndex = (_, nextIndex) => setIndex(nextIndex);
 	return (
 		<Box flexDirection="column" padding={1}>
 			<Box borderStyle="round" marginBottom={1}>
 				<Text>Hi, I&apos;m Dennis Muensterer. I like making things.</Text>
 			</Box>
-			<SelectInput items={items} index={index} onSelect={handleSelect} onHighlight={updateIndex}/>
+			<SelectInput items={items} index={index} onSelect={handleSelect} onHighlight={updateIndex} />
 		</Box>
 	);
 };

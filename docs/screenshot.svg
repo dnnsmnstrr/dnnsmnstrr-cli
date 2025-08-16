@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; font-size: 18px; }
+      .bg { fill: #0b0f14; }
+      .fg { fill: #e5e7eb; }
+      .muted { fill: #9ca3af; }
+      .accent { fill: #34d399; }
+      .title { fill: #ffffff; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="500" rx="8"/>
+
+  <!-- Header box -->
+  <text class="mono muted" x="40" y="80">╭────────────────────────────────────────────────╮</text>
+  <text class="mono title" x="40" y="108">│Hi, I'm Dennis Muensterer. I like making things.│</text>
+  <text class="mono muted" x="40" y="136">╰────────────────────────────────────────────────╯</text>
+
+  <!-- Menu items -->
+  <text class="mono fg" x="40" y="190">  Website</text>
+  <text class="mono fg" x="40" y="220">  Twitter</text>
+  <text class="mono fg" x="40" y="250">  GitHub</text>
+  <text class="mono fg" x="40" y="280">  Blog</text>
+  <text class="mono fg" x="40" y="310">  Contact</text>
+  <text class="mono muted" x="40" y="340">  ---------</text>
+  <text class="mono accent" x="40" y="370">❯ Quit</text>
+
+  <!-- Footer hint -->
+  <text class="mono muted" x="40" y="430">Use ↑/↓ to navigate, Enter to select</text>
+</svg>

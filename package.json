@@ -1,60 +1,51 @@
 {
   "name": "dnnsmnstrr",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The Dennis Muensterer CLI",
   "license": "MIT",
+  "type": "module",
   "repository": "dnnsmnstrr/dnnsmnstrr",
   "author": {
     "name": "Dennis Muensterer",
     "email": "dennismuensterer@gmail.com",
-    "url": "https://muensterer.xyz"
+    "url": "https://muensterer.tech"
   },
   "bin": {
-    "dnnsmnstrr": "source/cli.js"
+  "dnnsmnstrr": "dist/cli.cjs"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=18"
   },
   "scripts": {
-    "test": "xo && ava",
-    "start": "node source/cli.js"
+    "start": "tsx source/cli.js",
+  "build": "esbuild source/cli.js --bundle --format=cjs --platform=node --outfile=dist/cli.cjs --banner:js=\"#!/usr/bin/env node\" --external:react-devtools-core",
+    "prepare": "npm run build"
   },
   "files": [
-    "source"
+    "dist"
   ],
   "keywords": [
     "cli-app",
     "cli",
     "dnnsmnstrr",
-    "dotfiles",
     "card",
     "business-card",
     "sindresorhus",
     "unicorns"
   ],
   "dependencies": {
-    "import-jsx": "^2.0.0",
-    "ink": "^3.0.0",
-    "ink-box": "^1.0.0",
-    "ink-select-input": "https://github.com/dnnsmnstrr/ink-select-input.git",
-    "meow": "^7.0.1",
-    "open": "^6.3.0",
-    "react": "^16.8.6",
-    "simple-git": "^1.131.0",
-    "term-img": "^4.1.0",
-    "terminal-image": "^0.2.0"
+    "ink": "^6.2.0",
+    "ink-select-input": "^6.2.0",
+    "meow": "^13.2.0",
+    "open": "^10.2.0",
+  "react": "^19.1.1"
   },
   "devDependencies": {
-    "ava": "^1.4.1",
-    "eslint-config-xo-react": "^0.19.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-react-hooks": "^1.6.0",
-    "execa": "^1.0.0",
-    "xo": "^0.24.0"
-  },
-  "xo": {
-    "extends": [
-      "xo-react"
-    ]
+  "esbuild": "^0.23.1",
+    "eslint-config-xo-react": "^0.28.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "tsx": "^4.20.4",
+    "xo": "^1.2.2"
   }
 }
