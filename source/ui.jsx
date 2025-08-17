@@ -70,7 +70,6 @@ const Ui = () => {
 			const itemIndex = items.findIndex(
 				({id, label}) => (id || label)[0] === input
 			);
-			log(itemIndex.toString());
 			if (itemIndex >= 0) {
 				setIndex(itemIndex);
 			}
