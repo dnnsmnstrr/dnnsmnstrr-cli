@@ -1,6 +1,6 @@
 {
   "name": "dnnsmnstrr",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Dennis Muensterer CLI",
   "license": "MIT",
   "type": "module",
@@ -11,14 +11,14 @@
     "url": "https://muensterer.tech"
   },
   "bin": {
-  "dnnsmnstrr": "dist/cli.cjs"
+    "dnnsmnstrr": "dist/cli.mjs"
   },
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "start": "tsx source/cli.js",
-  "build": "esbuild source/cli.js --bundle --format=cjs --platform=node --outfile=dist/cli.cjs --banner:js=\"#!/usr/bin/env node\" --external:react-devtools-core",
+    "build": "esbuild source/cli.js --bundle --format=esm --platform=node --outfile=dist/cli.mjs --banner:js='#!/usr/bin/env node' --external:react --external:ink --external:ink-select-input --external:meow --external:open",
     "prepare": "npm run build"
   },
   "files": [
@@ -38,10 +38,10 @@
     "ink-select-input": "^6.2.0",
     "meow": "^13.2.0",
     "open": "^10.2.0",
-  "react": "^19.1.1"
+    "react": "^19.1.1"
   },
   "devDependencies": {
-  "esbuild": "^0.23.1",
+    "esbuild": "^0.23.1",
     "eslint-config-xo-react": "^0.28.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
